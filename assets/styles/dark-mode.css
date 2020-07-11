@@ -1,0 +1,961 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+*
+{
+	box-sizing: border-box;
+	scroll-behavior: smooth;
+}
+
+body
+{
+	font-family: 'Quicksand', sans-serif !important;
+	margin: 0;
+	padding: 0;
+	overflow-x: hidden;
+	display: flex; /* Atur flex */
+	min-height: 100vh; /* atur minimal tinggi */
+	flex-direction: column; /* set jadi kolom */
+}
+
+a
+{
+	text-decoration: none;
+}
+
+li
+{
+	list-style: none;
+}
+
+header
+{
+	display: block;
+	position: absolute;
+	background-color: #242424;
+	width: 100%;
+	height: 90px;
+	visibility: visible;
+}
+
+#nav-desktop
+{
+	height: 90px;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+#nav-desktop .logo-image
+{
+	float: left;
+	display: block;
+	height: 90px;
+	width: auto;
+	padding: 10px;
+}
+
+/*-------START OF FULLSCREEN NAV------------*/
+
+.HalamanPenuhMenu
+{
+	position: fixed;
+	top: -100%;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: #111;
+	transition: 0.5s;
+}
+
+.HalamanPenuhMenu.active
+{
+	top: 0;
+}
+
+.HalamanPenuhMenu .nav
+{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	overflow-y: auto;
+}
+
+.HalamanPenuhMenu .nav ul
+{
+	position: relative;
+}
+
+.HalamanPenuhMenu .nav ul li
+{
+	position: relative;
+	list-style: none;
+	padding: 0 20px;
+	margin: 5px 0;
+	overflow: hidden;
+	display: table;
+}
+
+.HalamanPenuhMenu .nav ul li:before
+{
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #ff0047;
+	transition: transform 0.5s ease-in-out;
+	transform: scaleY(0);
+	transform-origin: bottom;
+}
+
+.HalamanPenuhMenu .nav ul li:hover:before
+{
+	transition: transform 0.5s ease-in-out;
+	transform: scaleY(1);
+	transform-origin: top;
+}
+
+.HalamanPenuhMenu .nav ul li a
+{
+	position: relative;
+	color: #fff;
+	text-decoration: none;
+	font-size: 4vw;
+	font-weight: 700;
+	line-height: 1em;
+	padding-top: 12px;
+	display: inline-block;
+	text-transform: uppercase;
+	transition: 0.3s ease-in-out;
+}
+
+.HalamanPenuhMenu .nav ul li a:before
+{
+	content: attr(data-text);
+	position: absolute;
+	bottom: -100%;
+	left: 0;
+	color: #fff;
+}
+
+.HalamanPenuhMenu .nav ul li:hover a
+{
+	transform: translateY(-110%);
+	color: #fff;
+}
+
+.menuicon
+{
+	position: fixed;
+	top: 20px;
+	right: 20px;
+	width: 60px;
+	height: 60px;
+	background: #fff url(menu.png);
+	background-size: 40px;
+	cursor: pointer;
+	background-repeat: no-repeat;
+	background-position: 10px;
+}
+
+.menuicon.active
+{
+	background: #fff url(close.png);
+	background-size: 40px;
+	cursor: pointer;
+	background-repeat: no-repeat;
+	background-position: 10px;
+}
+
+/*-------END OF FULLSCREEN NAV------------*/
+
+.portofolio-button-container
+{
+	text-align: center;
+	float: right;
+	height: 40px;
+	width: 120px;
+	padding: 0;
+	margin-top: 30px;
+	margin-right: 15px;
+	display: block;
+}
+
+#cv-button-landing2
+{
+	display: none;
+}
+
+.portofolio-button-container a
+{
+	width: 100px;
+	padding: 14px;
+	color: white;
+	font-size: 14px;
+	padding-top: 10px;
+	border-radius: 10px;
+	background-color: #255a86;
+	transition: 0.2s;
+	text-decoration: none;
+}
+
+.portofolio-button-container a:hover
+{
+	font-size: 15px;
+}
+
+.portofolio-button-container a:active
+{
+	font-size: 14px;
+}
+
+#nav-desktop ul
+{
+	float: right;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+#nav-desktop ul li
+{
+	text-align: center;
+	margin: 0 auto;
+	width: 100px;
+}
+
+#nav-desktop ul li a
+{
+	padding-top: 30px;
+	color: #f2f1f1;
+	display: block;	
+	height: 100%;
+	transition: 0.3s;
+	border-bottom: 5px solid transparent;
+	text-decoration: none;
+}
+
+#nav-desktop ul li a:hover
+{
+	border-bottom: 5px solid #f2f1f1;
+}
+
+main
+{
+	margin: 0;
+	padding-top: 0;
+	flex: 1 0 auto; /*make it flex to make footer stay at bottom*/
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.landing-page
+{
+	margin-top: 0;
+	padding-top: 290px;
+	padding-left: 70px;
+	height: 700px;
+	position: relative;
+	background-image: url('../images/bg-black.webp');
+	animation: fadeowo 4s ease-in-out;
+	background-size: cover;
+}
+
+@keyframes fadeowo
+{
+	from
+	{
+		background-color: black;
+	}
+	to
+	{
+		background-color: none;
+	}
+}
+
+
+.landing-page h1
+{
+	font-size: 45px;
+	color: #f2f1f1;
+	padding: auto;
+	display: table;
+	padding: 3px;
+	animation: fadein 1s;
+}
+
+.landing-page p
+{
+	background-color: rgba(242, 241, 241, 0.7);
+	display: table;
+	font-size: 24px;
+	padding: 3px;
+	animation: fadein 5s;
+}
+
+.aboutme-wrapper
+{
+	text-align: center;
+	background-color: #14191b;
+	height: 100%;
+	width: 100%;
+	padding: 30px 0;
+}
+
+.aboutme-wrapper h1
+{
+	display: table;
+	justify-content: center;
+	margin: 0 auto;
+	padding-top: 20px;
+	padding-bottom: 10px;
+	color: #fff;
+	font-size: 45px;
+	border-bottom: 3px solid #f2f1f1;
+}
+
+.aboutme-wrapper p
+{
+	padding: 20px;
+	color: white;
+}
+
+.aboutme-info
+{
+	padding-top: 70px;
+}
+
+.mywork-wrapper
+{
+	text-align: center;
+	background-color: #14191b;
+	height: 100%;
+	width: 100%;
+	padding: 30px 0;
+}
+
+.mywork-wrapper h1
+{
+	display: table;
+	justify-content: center;
+	margin: 0 auto;
+	padding-top: 20px;
+	padding-bottom: 0;
+	color: #fff;
+	font-size: 45px;
+	border-bottom: 3px solid #f2f1f1;
+}
+
+.mywork-wrapper > .wrapper
+{
+	width: 100%;
+	padding-top: 50px;
+	display: block;
+	flex-direction: row;
+}
+
+.mywork-wrapper .view-allwork-href
+{
+	float: right;
+	color: white;
+	display: none;
+	background-color: transparent;
+}
+
+/*CARD MY WORK*/
+
+.mywork-wrapper > .wrapper .card
+{
+	height: 450px;
+	width: 320px;
+	margin: 0 32px;
+	border-radius: 10px;
+	position: relative;
+	overflow: hidden;
+	background-color: gray;
+}
+
+.mywork-wrapper > .wrapper .card .project-title
+{
+	position: absolute;
+	bottom: 20px;
+	color: white;
+	background-color: black;
+	opacity: 0.9;
+	padding: 10px;
+	font-size: 15px;
+	width: 100%;
+	transition: all 300ms ease-in-out;
+}
+
+
+.mywork-wrapper > .wrapper .card .project-picture
+{
+	height: 100%;
+	opacity: 0.7;
+	transition: all 400ms ease-in-out;
+}
+
+.mywork-wrapper > .wrapper .card .card-info
+{
+	padding: 5vw 10px;
+	position: absolute;
+	bottom: -200%;
+	background-color: black;
+	opacity: 0.9;
+	height: 100%;
+	width: 100%;
+	transition: all 400ms ease-in-out;
+}
+
+.mywork-wrapper > .wrapper .card .card-info h5, .mywork-wrapper > .wrapper .card .card-info p
+{
+	color: white;
+}
+
+.mywork-wrapper > .wrapper .card .card-info span
+{
+	position: absolute;
+	float: right;
+	top: 20px;
+	right: 10px;
+	color: white;
+}
+
+.mywork-wrapper > .wrapper .card:hover .project-picture
+{
+	transform: scale(1.2);
+}
+
+.mywork-wrapper > .wrapper .card:hover .card-info
+{
+	bottom: 0;
+}
+
+.mywork-wrapper > .wrapper .card:hover .project-title
+{
+	opacity: 0;
+	bottom: -100%;
+}
+/*END OF CARD MY WORK*/
+
+.myskill-wrapper
+{
+	text-align: center;
+	background-color: #14191b;
+	height: 100%;
+	width: 100%;
+	padding: 30px 0;
+}
+
+.myskill-wrapper h1
+{
+	display: table;
+	justify-content: center;
+	margin: 0 auto;
+	padding-top: 20px;
+	padding-bottom: 0;
+	color: #fff;
+	font-size: 45px;
+	border-bottom: 3px solid #f2f1f1;
+}
+
+.card-box 
+{
+	overflow: hidden;
+	padding: 20px 0;
+	display: block;
+	width: 250px;
+	margin: 10px auto;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	text-align: center;
+	position: relative;
+}
+
+.card-box .skill-icon
+{
+	opacity: 1;
+	display: block;
+	width: 100%;
+	height: auto;
+	transition: all 300ms ease-in-out;
+}
+
+.card-box:hover .skill-icon
+{
+	opacity: 0.5;
+}
+
+.card-box .title-skill
+{
+	opacity: 0;
+	position: absolute;
+	top: -50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	transition: all 250ms ease-in-out
+}
+
+.card-box:hover .title-skill
+{
+	opacity: 1;
+	top: 50%;
+}
+.card-box .title-skill p
+{
+	color: white;
+	background-color: gray;
+	padding: 10px;
+}
+
+/*My Certificate*/
+
+.mycertificate-wrapper
+{
+	text-align: center;
+	background-color: #14191b;
+	height: 670px;
+	width: 100%;
+	padding: 30px 0;
+}
+
+.mycertificate-wrapper h1
+{
+	display: table;
+	justify-content: center;
+	margin: 0 auto;
+	padding-top: 20px;
+	padding-bottom: 0;
+	color: #fff;
+	font-size: 45px;
+	border-bottom: 3px solid #f2f1f1;
+}
+
+.mycertificate-wrapper h6
+{ 
+	margin: 70px 20px;
+	height: 50px;
+	color: white; 
+}
+
+.mycertificate-wrapper > .wrapper .card
+{
+	height: 220px;
+	width: 440px;
+	margin: 0 25px;
+	border-radius: 10px;
+	position: relative;
+	overflow: hidden;
+	background-color: gray;
+}
+
+
+.mycertificate-wrapper > .wrapper .card .certificate-picture
+{
+	width: 100%;
+	opacity: 0.7;
+	transition: all 400ms ease-in-out;
+}
+
+.mycertificate-wrapper > .wrapper .card .card-info
+{
+	padding: 1vw 10px;
+	position: absolute;
+	bottom: 0;
+	background-color: black;
+	opacity: 0.9;
+	height: 100%;
+	width: 100%;
+	transition: all 300ms ease-in-out;
+	bottom: -170px;
+}
+
+.mycertificate-wrapper > .wrapper .card .card-info h5
+{
+	color: white;
+	font-size: 14px;
+	transition: all 300ms ease-in-out;
+}
+
+.mycertificate-wrapper > .wrapper .card .card-info p
+{
+	margin-top: 20px;
+	font-size: 12px;
+	color: white;
+}
+
+.mycertificate-wrapper > .wrapper .card:hover .certificate-picture
+{
+	transform: scale(1.2);
+}
+
+.mycertificate-wrapper > .wrapper .card:hover .card-info
+{
+	bottom: 0;
+	overflow: auto;
+}
+
+.mycertificate-wrapper > .wrapper .card:hover .card-info h5
+{
+	font-size: 17px;
+}
+
+/*end of my certificate*/
+
+.end-section
+{
+	text-align: center;
+	background-color: #14191b;
+	height: 100%;
+	width: 100%;
+	padding: 30px 0;
+	color: white;
+	padding: 20px;
+}
+
+.end-section h1
+{
+	padding-top: 20px;
+	color: #fff;
+	font-size: 45px;
+}
+
+.end-section-pic
+{
+	visibility:hidden;
+    opacity: 0;
+}
+
+.salam-penutup
+{
+	padding-top: 1%;
+	opacity: 0;
+}
+
+.slideToRight 
+{
+	opacity: 1;
+    visibility: visible;
+    animation-name: slideToRight;
+    -webkit-animation-name: slideToRight;
+    animation-duration: 1s;
+    -webkit-animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    -webkit-animation-timing-function: ease-in-out;
+}
+
+.slideToLeft {
+	opacity: 1;
+    visibility: visible;
+    animation-name: slideToLeft;
+    -webkit-animation-name: slideToLeft;
+    animation-duration: 1s;
+    -webkit-animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    -webkit-animation-timing-function: ease-in-out;
+}
+
+@keyframes slideToRight {
+    0% {
+        transform: translateX(-150%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+@keyframes slideToLeft {
+    0% {
+        transform: translateX(150%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+.btn-portofolio-dl
+{
+	display: none !important;
+}
+
+
+/* added the following to give the background color of the arrows as red for visibility, the default which can be found in the slick-theme.css was white */
+.slick-prev, .slick-next 
+{
+    color: red;
+}
+
+.btn-navbar-expand-container
+{
+	display: none;
+}
+
+#btn-vert-nav
+{
+	position: fixed; 
+	top: 300px; 
+	overflow: hidden;
+}
+
+.btn-group-vertical
+{
+	transition: 0.2s ease-in-out;
+	right: -50px; 
+}
+
+.btn-group-vertical.active
+{
+	transition: 0.2s ease-in-out;
+	right: 0px; 
+}
+
+.loading-ajax
+{
+	position: absolute;
+	display: block;
+	z-index: 9999;
+	background-color: pink;
+	height: 100%;
+	width: 100%;
+	text-align: center; 
+	padding-top: 250px;
+}
+
+.loading-ajax-end
+{
+	position: absolute;
+	background-color: pink;
+	height: 100%;
+	width: 100%;
+	text-align: center; 
+	padding-top: 250px;
+	animation: fadeOut 1s ease;
+}
+
+@keyframes fadeOut {
+  0% 
+  {
+	display: block;
+  	opacity: 1;
+	z-index: 20;
+  }
+  90%
+  {
+    opacity: 0;
+  }
+  100% 
+  {
+    display: none;
+    z-index: -1;
+  }
+}
+
+
+
+@media screen and (max-width: 760px)
+{
+	.landing-page h1
+	{
+		font-size: 7vw;
+	}
+
+	.landing-page p
+	{
+		font-size: 3vw;
+	}
+
+	/* float button */
+
+	.btn-portofolio-dl
+	{
+		position:fixed;
+		width:50px;
+		height:50px;
+		bottom:20px;
+		right:20px;
+		background-color:#255A86;
+		color:#FFF;
+		border-radius:50px;
+		text-align:center;
+		box-shadow: 2px 2px 3px #999;
+		display: inline;
+	}
+
+	.my-float{
+		margin-top:19px;
+	}
+
+	#fixed-btn-navbar
+	{
+		display: none;
+		position:fixed;
+		width:50px;
+		height:50px;
+		top:10px;
+		right:0;
+	}
+
+	#fixed-btn-navbar.active
+	{
+		display: inline-block;
+	}
+
+	/* end of float button */
+	header
+	{
+		height: 70px;
+	}
+
+	#nav-desktop .logo-image
+	{
+		height: 75px;
+	}
+
+	.close-navbar-btn
+	{
+		position: absolute;
+		top: 20px;
+		right: 20px;
+	}
+
+	.btn-navbar-expand-container
+	{
+		display: inline;
+		float: right;
+		margin-right: 18px;
+		margin-top: 15px;
+	}
+
+	.navbarbutton
+	{
+		height: 45px;
+		width: auto;
+	}
+
+	#nav-desktop .nav-desktop-li
+	{
+		display: none;
+	}
+
+	#cv-button-landing1
+	{
+		display: none;
+	}
+
+	#cv-button-landing2
+	{
+		display: inline;
+		align-self: center;
+		margin-right: 50%;
+		transform: translateX(50%);
+	}
+
+	.landing-page
+	{
+		text-align: center;
+		padding-left: 0;
+	}
+
+	.landing-page p
+	{
+		display: block;
+	}
+
+	.portofolio-button-container
+	{
+		margin-right: 120px;
+	}
+
+	.aboutme-info
+	{
+		padding-top: 0;
+	}
+
+	.aboutme-wrapper
+	{
+		height: 100%;
+	}
+
+	.mywork-wrapper h1
+	{
+		display: inline;
+		justify-content: none;
+		margin-left: -19vw;
+		font-size: 25px;
+		border-bottom: none;
+	}
+
+	.mywork-wrapper > .wrapper .card .card-info
+	{
+		padding: 20vw 10px;
+	}
+
+	.mycertificate-wrapper > .wrapper .card .card-info
+	{
+		padding: 3vw 10px;
+	}
+
+	.mywork-wrapper .wrapper
+	{
+		padding-top: 30px;
+	}
+
+	.mywork-wrapper .view-allwork-href
+	{
+		display: inline;
+		margin-top: 5px;
+		margin-right: 8vw;
+
+	}
+
+	.salam-penutup
+	{
+		padding-top: 20px;
+	}
+
+	#btn-vert-nav
+	{
+		right: -50px;
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+footer
+{
+	padding: 20px;
+	color: white;
+	font-size: 13px;
+	background-color: gray;
+	text-align: center;
+	font-weight: bold;
+
+}
+
