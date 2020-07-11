@@ -730,7 +730,7 @@ main
 	position: absolute;
 	display: block;
 	z-index: 9999;
-	background-color: pink;
+	background-color: #242424;
 	height: 100%;
 	width: 100%;
 	text-align: center; 
@@ -740,7 +740,7 @@ main
 .loading-ajax-end
 {
 	position: absolute;
-	background-color: pink;
+	background-color: #242424;
 	height: 100%;
 	width: 100%;
 	text-align: center; 

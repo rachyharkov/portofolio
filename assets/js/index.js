@@ -74,6 +74,7 @@ $(window).scroll(function (e)
       var isVisible = top > $('.end-section').offset().top;
       
       $('.end-section-pic').toggleClass('slideToLeft', isVisible);
-      $('.salam-penutup').toggleClass('slideToRight', isVisible);
+      $('.end-section-pic-capt').toggleClass('slideToRight', isVisible);
+      $('.salam-penutup').toggleClass('slideToLeft', isVisible);
 });
 
